@@ -3,24 +3,56 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>nonvibecoded — Stephan</title>
+        <title>steefware — nonvibecoded</title>
+        <link rel="icon" href="/steefware-icon.svg" />
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <header class="topbar">
+            <div class="brand">
+                <img class="logo" src="/steefware-icon.svg" alt="steefware logo" width="40" height="40">
+                <span class="brand-name">steefware</span>
+            </div>
+            <nav class="topnav" aria-hidden="true">
+                <a href="#apps">Apps</a>
+                <a href="#about">About</a>
+            </nav>
+        </header>
+
         <main class="hero">
             <div class="container">
                 <h1 class="title">nonvibecoded</h1>
-                <p class="tagline">A small collection of lightweight apps and experiments.</p>
+                <p class="tagline">A curated superapp for lightweight tools and experiments.</p>
 
-                <nav class="grid">
-                    <a class="card" href="/aflossingstabel">Aflossingstabel</a>
-                    <a class="card" href="/stocksim">StockSim</a>
-                    <a class="card" href="/nonvibecoded">Legacy site</a>
-                </nav>
+                <section id="apps" class="grid">
+                    <a class="card" href="/aflossingstabel">
+                        <div class="card-visual">📊</div>
+                        <div class="card-body">
+                            <h3>Aflossingstabel</h3>
+                            <p>Loan repayment calculator — clean, fast and predictable.</p>
+                        </div>
+                    </a>
 
-                <p class="note">If an app path is empty, it can be added to this site at any time.</p>
+                    <a class="card" href="/stocksim">
+                        <div class="card-visual">📈</div>
+                        <div class="card-body">
+                            <h3>StockSim</h3>
+                            <p>Simple stock market simulator for learning and experimentation.</p>
+                        </div>
+                    </a>
+                </section>
+
+                <p class="note">Want to add an app? Drop the files into `/nonvibecoded` and I'll wire them in.</p>
             </div>
         </main>
+
+        <footer class="footer">
+            <div class="container footer-inner">
+                <small class="muted">© steefware</small>
+                <a class="legacy-link" href="/nonvibecoded">legacy site</a>
+            </div>
+        </footer>
+
         <script src="index.js"></script>
     </body>
 </html>
