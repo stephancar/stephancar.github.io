@@ -1,3 +1,22 @@
-# stephancar.github.io (archived)
+# steefware portfolio
 
-This README was archived and the active site is now served from the project root as a minimal steefware landing page. Original site files have been moved to `nonvibecoded/`.
+Modern steefware landing page built with Vite, React, TypeScript, MUI, and Three.js.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Notes
+
+- External tools are linked from `src/data/apps.ts`.
+- The legacy archive remains in `nonvibecoded/`.
