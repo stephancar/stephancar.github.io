@@ -27,6 +27,8 @@ jobs:
           cache: "npm"
       - name: Install
         run: npm install
+      - name: Fix vite permissions
+        run: chmod +x node_modules/.bin/vite
       - name: Build
         run: npm run build
       - name: Upload artifact
