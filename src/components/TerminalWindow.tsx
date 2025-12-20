@@ -1,5 +1,5 @@
-import { Box, Stack, Typography } from "@mui/material";
-import { ReactNode } from "react";
+import { Typography } from "@mui/material";
+import type { ReactNode } from "react";
 
 type TerminalWindowProps = {
   title: string;
@@ -9,10 +9,10 @@ type TerminalWindowProps = {
 
 export const TerminalWindow = ({ title, subtitle, children }: TerminalWindowProps) => {
   return (
-    <Box className="terminal-window">
-      <Box className="terminal-header">
+    <div className="terminal-window">
+      <div className="terminal-header">
         <span className="terminal-close" aria-hidden="true" />
-        <Stack spacing={0}>
+        <div className="terminal-title">
           <Typography variant="caption" sx={{ letterSpacing: "0.06em" }}>
             steef@steefware:~ / {title}
           </Typography>
@@ -21,9 +21,9 @@ export const TerminalWindow = ({ title, subtitle, children }: TerminalWindowProp
               {subtitle}
             </Typography>
           ) : null}
-        </Stack>
-      </Box>
-      <Box className="terminal-body">{children}</Box>
-    </Box>
+        </div>
+      </div>
+      <div className="terminal-body">{children}</div>
+    </div>
   );
 };

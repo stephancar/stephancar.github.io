@@ -147,6 +147,12 @@ a {
   background: var(--terminal-header);
 }
 
+.terminal-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .terminal-close {
   width: 12px;
   height: 12px;

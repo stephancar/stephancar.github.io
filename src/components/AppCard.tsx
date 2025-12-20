@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, Stack, Typography } from "@mui/material";
+import { Card, CardActionArea, Stack, Typography } from "@mui/material";
 import TableChartIcon from "@mui/icons-material/TableChart";
 import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import InsightsIcon from "@mui/icons-material/Insights";
