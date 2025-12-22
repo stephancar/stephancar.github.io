@@ -2,32 +2,45 @@
   xmlns="http://www.w3.org/2000/svg"
   width="81"
   height="81"
-  fill="none"
   viewBox="0 0 81 81"
 >
-  <!-- Outer black shape -->
-  <path
-    fill="#000"
-    d="M43.741 80.186c20.455 0 37.037-16.582 37.037-37.037S64.196 6.112 43.741 6.112 6.704 22.694 6.704 43.149s16.582 37.037 37.037 37.037"
-  />
+  <defs>
+    <filter
+      id="dropShadow"
+      x="-20%"
+      y="-20%"
+      width="140%"
+      height="140%"
+    >
+      <feDropShadow
+        dx="4"
+        dy="4"
+        stdDeviation="0"
+        flood-color="#000"
+      />
+    </filter>
+  </defs>
 
-  <!-- Yellow face circle -->
-  <path
-    fill="#FFFF00"
-    stroke="#000"
-    stroke-width="1.557"
-    d="M38.605 76.433c20.892 0 37.828-16.936 37.828-37.828 0-20.89-16.936-37.827-37.828-37.827C17.715.778.779 17.714.779 38.606c0 20.89 16.936 37.827 37.828 37.827Z"
-  />
-
-  <!-- Eyes -->
-  <circle cx="30" cy="42" r="2.5" fill="#000" />
-  <circle cx="40" cy="42" r="2.5" fill="#000" />
-
-  <!-- Smile -->
-  <path
-    d="M28 50c2.5 3.5 7.5 3.5 10 0"
+  <!-- Yellow face with drop shadow -->
+  <circle
+    cx="40.5"
+    cy="40.5"
+    r="36"
+    fill="#FFD400"
     stroke="#000"
     stroke-width="2"
+    filter="url(#dropShadow)"
+  />
+
+  <!-- Eyes (bigger) -->
+  <circle cx="30.5" cy="35.5" r="3.5" fill="#000" />
+  <circle cx="50.5" cy="35.5" r="3.5" fill="#000" />
+
+  <!-- Smile (bigger & wider) -->
+  <path
+    d="M28 47c4 6 14 6 18 0"
+    stroke="#000"
+    stroke-width="3"
     fill="none"
     stroke-linecap="round"
   />
