@@ -2,14 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Keep your SVG favicon for browsers -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- iOS "app mode" -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="steefware" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <!-- Better iPhone layout (safe areas / notch) -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
     <title>steefware.com</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <meta
       name="description"
       content="A curated superapp for lightweight tools and experiments. Clean, fast, predictable utilities for people who care about clarity and precision."
     />
+
+    <!-- Tiny "feels like an app" improvements -->
+    <style>
+      html, body { height: 100%; }
+      body {
+        /* iOS safe areas */
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+                 env(safe-area-inset-bottom) env(safe-area-inset-left);
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
   </head>
 
   <body class="bg-white text-black antialiased">
@@ -17,7 +48,7 @@
       <!-- Header -->
       <header class="flex items-center justify-between py-6">
         <a
-          href="#"
+          href="/"
           class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-3 py-2 text-sm font-black tracking-tight shadow-[4px_4px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:translate-x-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
           aria-label="steefware home"
         >
@@ -42,12 +73,8 @@
       <!-- Hero -->
       <main class="pb-14 pt-6">
         <section class="relative">
-          <div
-            class="rounded-3xl border-2 border-black p-6 shadow-[8px_8px_0_0_#000] sm:p-10"
-          >
-            <h1
-              class="text-balance text-5xl font-black tracking-tight sm:text-6xl"
-            >
+          <div class="rounded-3xl border-2 border-black p-6 shadow-[8px_8px_0_0_#000] sm:p-10">
+            <h1 class="text-balance text-5xl font-black tracking-tight sm:text-6xl">
               steefware.com
             </h1>
 
@@ -65,27 +92,19 @@
         <!-- Tools -->
         <section id="tools" class="mt-12">
           <div class="flex items-end justify-between gap-4">
-            <h2 class="text-sm font-black uppercase tracking-widest">
-              Tools
-            </h2>
+            <h2 class="text-sm font-black uppercase tracking-widest">Tools</h2>
           </div>
 
           <div class="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
             <!-- Card 1 -->
             <a
-              href="https://steefware.com/aflossingstabel"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/aflossingstabel"
               class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
               aria-label="Open Aflossingstabel"
             >
               <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">
-                  Aflossingstabel
-                </h3>
-                <span
-                  class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
+                <h3 class="text-xl font-black tracking-tight">Aflossingstabel</h3>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                   Open →
                 </span>
               </div>
@@ -96,148 +115,78 @@
             </a>
 
             <!-- Card 2 -->
-            <a
-              href="https://steefware.com/tanklevel"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-              aria-label="Open Tank Level Calculator"
-            >
+            <a href="/tanklevel" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Tank Level Calculator">
               <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">
-                  Tank Level Calculator
-                </h3>
-                <span
-                  class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
-                  Open →
-                </span>
+                <h3 class="text-xl font-black tracking-tight">Tank Level Calculator</h3>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                Simple calculator for tank fill levels.
-              </p>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">Simple calculator for tank fill levels.</p>
               <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
             </a>
 
             <!-- Card 3 -->
-            <a
-              href="https://steefware.com/vvprbis"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-              aria-label="Open VVPRBIS"
-            >
+            <a href="/vvprbis" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open VVPRBIS">
               <div class="flex items-start justify-between gap-4">
                 <h3 class="text-xl font-black tracking-tight">VVPRBIS</h3>
-                <span
-                  class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
-                  Open →
-                </span>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                Clear, focused tooling for Belgian VVPR-bis dividend planning.
-              </p>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">Clear, focused tooling for Belgian VVPR-bis dividend planning.</p>
               <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
             </a>
 
             <!-- Card 4 -->
-            <a
-              href="https://steefware.com/stocksim"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-              aria-label="Open StockSim"
-            >
+            <a href="/stocksim" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open StockSim">
               <div class="flex items-start justify-between gap-4">
                 <h3 class="text-xl font-black tracking-tight">StockSim</h3>
-                <span
-                  class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
-                  Open →
-                </span>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                A minimal stock market simulator for learning and testing ideas.
-              </p>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">A minimal stock market simulator for learning and testing ideas.</p>
               <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
             </a>
 
-             <!-- Card 5 -->
-            <a
-              href="https://steefware.com/passwordgenerator"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-              aria-label="Open Password Generator"
-            >
+            <!-- Card 5 -->
+            <a href="/passwordgenerator" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Password Generator">
               <div class="flex items-start justify-between gap-4">
                 <h3 class="text-xl font-black tracking-tight">Password Generator</h3>
-                <span
-                  class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
-                  Open →
-                </span>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                Self-explanatory.
-              </p>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">Self-explanatory.</p>
               <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
             </a>
 
             <!-- Card 6 -->
-<a
-  href="https://steefware.com/helloworld"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-  aria-label="Open Hello World"
->
-  <div class="flex items-start justify-between gap-4">
-    <h3 class="text-xl font-black tracking-tight">
-      Hello World
-    </h3>
-    <span
-      class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-    >
-      Open →
-    </span>
-  </div>
-  <p class="mt-3 text-sm font-semibold leading-relaxed">
-    This is my first web page.  
-  </p>
-  <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
-</a>
+            <a href="/helloworld" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Hello World">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-xl font-black tracking-tight">Hello World</h3>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+              </div>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">This is my first web page.</p>
+              <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
+            </a>
 
             <!-- Card 7 -->
-<a
-  href="https://steefware.com/solarfit"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-  aria-label="Open SolarFit"
->
-  <div class="flex items-start justify-between gap-4">
-    <h3 class="text-xl font-black tracking-tight">
-      SolarFit
-    </h3>
-    <span
-      class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-    >
-      Open →
-    </span>
-  </div>
-  <p class="mt-3 text-sm font-semibold leading-relaxed">
-    Tooling to determine optimal solar panel fitment on a roof.
-    Geometry first. Assumptions explicit.
-  </p>
-  <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
-</a>
-
-            
+            <a href="/solarfit" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open SolarFit">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-xl font-black tracking-tight">SolarFit</h3>
+                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+              </div>
+              <p class="mt-3 text-sm font-semibold leading-relaxed">
+                Tooling to determine optimal solar panel fitment on a roof. Geometry first. Assumptions explicit.
+              </p>
+              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+            </a>
           </div>
         </section>
       </main>
     </div>
+
+    <!-- Service worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
