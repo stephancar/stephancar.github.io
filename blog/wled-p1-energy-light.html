@@ -80,9 +80,9 @@
             <h2>What do you need?</h2>
             <ul>
               <li>A <strong>HomeWizard P1 meter</strong> plugged into the P1 port of your digital electricity meter (with the local API enabled in the HomeWizard app).</li>
-              <li>An <strong>ESP32 board</strong> (a few euros from the usual places).</li>
-              <li>An addressable LED strip, e.g. <strong>WS2812B</strong>.</li>
-              <li>A USB cable and a browser that supports Web Serial: <strong>Chrome or Edge</strong> on desktop.</li>
+              <li>An <strong>ESP32 or ESP32-C3 board</strong> (a few euros from the usual places — the flasher picks the right firmware automatically).</li>
+              <li>An addressable LED strip, e.g. <strong>WS2812B</strong>, with an adequate 5&nbsp;V supply.</li>
+              <li>A USB <em>data</em> cable and a browser that supports Web Serial: <strong>Chrome or Edge</strong> on desktop.</li>
             </ul>
 
             <h2>How does flashing from the browser work?</h2>
@@ -99,14 +99,15 @@
             <h2>What does the usermod actually do?</h2>
             <p>
               WLED is the de-facto standard firmware for addressable LEDs.
-              The P1 usermod polls the HomeWizard P1 meter's local REST API
-              on your LAN — typically <code>http://&lt;meter-ip&gt;/api/v1/data</code>
-              — a few times per second and maps the current net power to the
-              strip:
+              The P1 usermod finds the HomeWizard P1 meter on your network
+              <strong>automatically</strong> and reads its local REST API,
+              mapping the current net power to a dedicated
+              <strong>Grid Flow</strong> effect:
             </p>
             <ul>
-              <li><strong>Importing</strong> from the grid → purple, more LEDs as the load rises.</li>
-              <li><strong>Exporting</strong> solar surplus → green, more LEDs as you export more.</li>
+              <li><strong>Importing</strong> from the grid → purple pulses, faster as the load rises.</li>
+              <li><strong>Exporting</strong> solar surplus → green pulses, faster as you export more.</li>
+              <li><strong>Balanced</strong> → calm white.</li>
               <li>Everything stays <strong>local</strong>: no cloud, no account, meter data never leaves your network.</li>
             </ul>
             <p>
@@ -117,12 +118,12 @@
 
             <h2>Step by step</h2>
             <ol>
-              <li>Enable the <em>local API</em> for your P1 meter in the HomeWizard Energy app (Settings → Meters → your meter).</li>
+              <li>Enable the <em>Local API</em> for your P1 meter in the HomeWizard Energy app (Settings → Meters → your meter → Local API).</li>
               <li>Connect the ESP32 via USB and open the <a href="/wled-p1-flasher/">WLED P1 Flasher</a> in Chrome or Edge.</li>
               <li>Click <em>Install</em>, select the serial port, and wait ±2 minutes.</li>
-              <li>Connect to the <code>WLED-AP</code> Wi-Fi network the board creates, and enter your home Wi-Fi credentials.</li>
-              <li>In the WLED settings, open the usermod page and fill in the IP address of your P1 meter.</li>
-              <li>Wire the LED strip (5V, GND, and data — GPIO2 by default) and watch your house breathe.</li>
+              <li>When prompted, enter your Wi-Fi credentials — they're sent over the USB cable, no hotspot dance needed.</li>
+              <li>Open your new WLED device, set your LED count under Config → LED Preferences. The P1 meter is discovered automatically.</li>
+              <li>Select the <strong>Grid Flow</strong> effect on your segment, save it as a boot preset, wire the strip, and watch your house breathe.</li>
             </ol>
 
             <h2>Troubleshooting</h2>
@@ -134,9 +135,10 @@
             </p>
             <h3>The strip stays dark</h3>
             <p>
-              Check the usermod settings for the meter IP, and give the meter
-              a fixed IP in your router's DHCP settings so it can't wander.
-              Also verify the local API toggle is on in the HomeWizard app.
+              Verify the Local API toggle is on in the HomeWizard app, that
+              the WLED device and the meter are on the same network, and that
+              the <strong>Grid Flow</strong> effect is selected on your
+              segment with the LED count configured.
             </p>
             <h3>Flashing fails halfway</h3>
             <p>

@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <title>Solving any triangle from three values | steefware blog</title>
+    <title>The right triangle: hypotenuse, angles and area explained | steefware blog</title>
     <meta
       name="description"
-      content="Law of sines, law of cosines and Heron's formula: how a triangle calculator solves any triangle from three known values — and the SSA case where two answers are correct."
+      content="Pythagoras, arctangent and area: the complete math of the right triangle, with worked examples for roofs, ramps and shelves — and a free calculator that does it for you."
     />
     <link rel="canonical" href="https://www.steefware.com/blog/triangle-calculator.html" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="steefware" />
-    <meta property="og:title" content="Solving any triangle from three values" />
-    <meta property="og:description" content="Law of sines, law of cosines, Heron's formula, and the one case where the answer is 'it depends'." />
+    <meta property="og:title" content="The right triangle: hypotenuse, angles and area explained" />
+    <meta property="og:description" content="Pythagoras, arctangent and area: the complete math of the right triangle, with worked examples for roofs, ramps and shelves." />
     <meta property="og:url" content="https://www.steefware.com/blog/triangle-calculator.html" />
     <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
     <meta property="article:published_time" content="2026-07-08" />
@@ -28,8 +28,8 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Solving any triangle from three values",
-      "description": "How a triangle calculator solves any triangle from three known values using the law of sines, law of cosines and Heron's formula.",
+      "headline": "The right triangle: hypotenuse, angles and area explained",
+      "description": "Pythagoras, arctangent and area: the complete math of the right triangle, with worked examples for roofs, ramps and shelves.",
       "inLanguage": "en",
       "datePublished": "2026-07-08",
       "dateModified": "2026-07-08",
@@ -59,7 +59,7 @@
         <article>
           <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
           <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
-            Solving any triangle from three values
+            The right triangle: hypotenuse, angles and area explained
           </h1>
           <div class="sw-meta" style="margin-top: 1rem;">
             <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±4 min read</span>
@@ -69,76 +69,70 @@
             <p>
               The <a href="/trianglecalculator/">Triangle Calculator</a>'s
               official tagline is "I many smart now!", which undersells it
-              slightly: give it any three independent values of a triangle —
-              sides or angles — and it hands back everything else: the
-              missing sides, the missing angles, the area, the perimeter.
-              Here's the complete bag of tricks it uses, which is also the
-              entire trigonometry you need for woodworking, roofing, or
-              helping with homework you claimed to remember.
+              slightly: enter the two legs of a right triangle and it hands
+              back everything else — the hypotenuse, both angles, the area
+              and the perimeter. That covers a remarkable share of real-life
+              measuring problems, because whenever something vertical meets
+              something horizontal, a right triangle appears: roofs, ramps,
+              stairs, ladders, shelf brackets, TV sizes.
             </p>
 
-            <h2>Which three values are enough?</h2>
+            <h2>The one formula everyone remembers</h2>
             <p>
-              A triangle has six quantities: three sides (a, b, c) and three
-              angles (A, B, C). Knowing three of them pins down the triangle —
-              with two exceptions. Three angles (AAA) only fix the
-              <em>shape</em>, not the size: every scale of that triangle has
-              the same angles. And one particular combination gives two valid
-              answers (see below).
+              The legs <code>A</code> and <code>B</code> form the right
+              angle; the hypotenuse <code>C</code> is the long side opposite
+              it. Pythagoras, ±2,500 years old and still undefeated:
+            </p>
+            <pre><code>C = √(A² + B²)</code></pre>
+            <p>
+              A ladder question is the classic: the wall is 2.4&nbsp;m high
+              (A), the ladder's foot stands 1.0&nbsp;m from the wall (B), so
+              the ladder spans √(2.4² + 1.0²) = √6.76 = <strong>2.6&nbsp;m</strong>.
             </p>
 
-            <h2>The four solvable cases</h2>
+            <h2>The formulas nobody remembers</h2>
+            <p>The angles come from the arctangent, and the rest is arithmetic:</p>
+            <pre><code>angle α (opposite A) = atan(A / B)
+angle β (opposite B) = 90° − α
+
+Area      = A × B / 2
+Perimeter = A + B + C</code></pre>
+            <p>
+              Worked example — a roof section 4.0&nbsp;m deep (B) rising
+              1.8&nbsp;m (A): pitch angle atan(1.8/4.0) ≈ <strong>24.2°</strong>,
+              rafter length √(1.8² + 4.0²) ≈ <strong>4.39&nbsp;m</strong>.
+              Two numbers off a tape measure, and you know your roof pitch
+              and rafter length.
+            </p>
+
+            <h2>Where this shows up around the house</h2>
             <table>
-              <tr><th>You know</th><th>Case</th><th>Tool for the job</th></tr>
-              <tr><td>3 sides</td><td>SSS</td><td>law of cosines</td></tr>
-              <tr><td>2 sides + the angle between them</td><td>SAS</td><td>law of cosines</td></tr>
-              <tr><td>2 angles + any side</td><td>ASA / AAS</td><td>law of sines</td></tr>
-              <tr><td>2 sides + a non-included angle</td><td>SSA</td><td>law of sines, carefully</td></tr>
+              <tr><th>Problem</th><th>A (rise)</th><th>B (run)</th><th>You get</th></tr>
+              <tr><td>Roof pitch</td><td>ridge height</td><td>half the span</td><td>pitch angle, rafter length</td></tr>
+              <tr><td>Wheelchair ramp</td><td>step height</td><td>ramp length on the ground</td><td>slope angle (aim ≤ 4°)</td></tr>
+              <tr><td>Stair stringer</td><td>floor height</td><td>horizontal run</td><td>stringer length, angle</td></tr>
+              <tr><td>Shelf bracket</td><td>bracket height</td><td>shelf depth</td><td>brace length</td></tr>
+              <tr><td>"55-inch" TV</td><td>screen height</td><td>screen width</td><td>the diagonal you paid for</td></tr>
             </table>
 
-            <h3>Law of cosines</h3>
-            <pre><code>c² = a² + b² − 2ab·cos(C)</code></pre>
+            <h2>Why only right triangles?</h2>
             <p>
-              Pythagoras with a correction term. When C = 90°, cos(C) = 0 and
-              it collapses into the a² + b² = c² you already know.
-            </p>
-
-            <h3>Law of sines</h3>
-            <pre><code>a / sin(A) = b / sin(B) = c / sin(C)</code></pre>
-            <p>
-              Every side divided by the sine of its opposite angle gives the
-              same ratio (the diameter of the circumscribed circle, if you
-              want to impress someone).
-            </p>
-
-            <h2>The ambiguous case: when two answers are both right</h2>
-            <p>
-              SSA — two sides and an angle that isn't between them — is the
-              famous trap. Example: a = 7, b = 10, A = 40°. The law of sines
-              gives sin(B) ≈ 0.918… but two angles have that sine: B ≈ 66.7°
-              <em>and</em> B ≈ 113.3°. Both produce a perfectly valid
-              triangle. A good calculator shows both solutions instead of
-              silently picking one; a bad one loses you a roof truss.
-            </p>
-
-            <h2>Area without knowing the height</h2>
-            <p>Two favourites:</p>
-            <pre><code>Area = ½ · a · b · sin(C)          (two sides + included angle)
-
-s = (a + b + c) / 2                (Heron's formula, three sides)
-Area = √( s(s−a)(s−b)(s−c) )</code></pre>
-            <p>
-              Heron's formula is 2,000 years old and still the best party
-              trick in geometry: area from nothing but the three side
-              lengths.
+              General triangles need the law of sines and cosines, and one
+              input combination (two sides plus a non-included angle) even
+              has two valid answers. That's a fine rabbit hole, but 95% of
+              practical measuring problems are right triangles — because
+              gravity makes walls vertical and floors horizontal. The tool
+              does the common case perfectly rather than the general case
+              confusingly.
             </p>
 
             <h2>Try it</h2>
             <p>
-              The <a href="/trianglecalculator/">Triangle Calculator</a> does
-              all of the above, shows the ambiguous case when it exists, and
-              draws the result. Free, no cookies, in your browser. You many
-              smart now too.
+              Enter your two legs in the
+              <a href="/trianglecalculator/">Triangle Calculator</a> and get
+              the hypotenuse, angles, area and perimeter instantly —
+              locally in your browser, free, no cookies. You many smart now
+              too.
             </p>
           </div>
 
@@ -147,7 +141,7 @@ Area = √( s(s−a)(s−b)(s−c) )</code></pre>
               <h3>Triangle Calculator</h3>
               <span class="sw-badge">Open the tool →</span>
             </div>
-            <p>Any triangle, solved from three known values.</p>
+            <p>Hypotenuse, angles and area from the two legs of a right triangle.</p>
             <div class="sw-card-bar sw-card-bar--amber"></div>
           </a>
         </article>

@@ -15,7 +15,7 @@ Serious tools cover personal finance (Belgian context), solar energy, and everyd
 - [SolarFit](https://www.steefware.com/solarfit/): Work out how many solar panels fit on a roof. Geometry first, assumptions explicit.
 - [Solar Forecast](https://www.steefware.com/solarforecast/): Expected solar panel production based on the weather forecast.
 - [Password Generator](https://www.steefware.com/passwordgenerator/): Generate strong random passwords locally in the browser; nothing is sent to any server.
-- [Triangle Calculator](https://www.steefware.com/trianglecalculator/): Solve any triangle from three known values (sides, angles, area).
+- [Triangle Calculator](https://www.steefware.com/trianglecalculator/): Right triangle calculator — enter the two legs and get the hypotenuse, angles, area and perimeter.
 - [WLED P1 Flasher](https://www.steefware.com/wled-p1-flasher/): Flash WLED firmware with the HomeWizard P1 usermod onto an ESP32 directly from the browser (ESP Web Tools). The LED strip then shows the home's live energy import/export from the P1 smart meter.
 
 ## Fun & experiments
