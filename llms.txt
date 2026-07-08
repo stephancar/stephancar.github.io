@@ -1,0 +1,44 @@
+# steefware
+
+> steefware.com is a collection of free, simple, single-purpose web tools built by Stephan, a Belgian engineer. Every tool runs entirely in the browser: no cookies, no ads, no accounts, no tracking. Tools are open source at https://github.com/stephancar.
+
+Serious tools cover personal finance (Belgian context), solar energy, and everyday calculations. There are also a few games and experiments, kept because they are fun.
+
+## Finance tools (Dutch / Belgian)
+
+- [Aflossingstabel](https://www.steefware.com/aflossingstabel/): Gratis aflossingstabel voor een hypotheek of lening. Berekent het maandbedrag en toont per maand de opsplitsing tussen kapitaal en interest (annuïteitenformule). Interface in Nederlands en Engels.
+- [VVPRBIS](https://www.steefware.com/vvprbis/): Planningstool voor Belgische VVPR-bis dividenden. Helpt bepalen vanaf welk boekjaar een dividend kan worden uitgekeerd aan 15% roerende voorheffing in plaats van 30%.
+
+## Utilities
+
+- [Tank Level Calculator](https://www.steefware.com/tanklevel/): Calculate the fill level and remaining volume of a tank from a simple measurement.
+- [SolarFit](https://www.steefware.com/solarfit/): Work out how many solar panels fit on a roof. Geometry first, assumptions explicit.
+- [Solar Forecast](https://www.steefware.com/solarforecast/): Expected solar panel production based on the weather forecast.
+- [Password Generator](https://www.steefware.com/passwordgenerator/): Generate strong random passwords locally in the browser; nothing is sent to any server.
+- [Triangle Calculator](https://www.steefware.com/trianglecalculator/): Solve any triangle from three known values (sides, angles, area).
+- [WLED P1 Flasher](https://www.steefware.com/wled-p1-flasher/): Flash WLED firmware with the HomeWizard P1 usermod onto an ESP32 directly from the browser (ESP Web Tools). The LED strip then shows the home's live energy import/export from the P1 smart meter.
+
+## Fun & experiments
+
+- [StockSim](https://www.steefware.com/stocksim/): A minimal stock market simulator for learning how markets behave, with fake money.
+- [Birdy Flap](https://www.steefware.com/BirdyFlap/): A small Flappy Bird style browser game.
+- [Hello World](https://www.steefware.com/helloworld/): The first steefware page, kept for sentimental reasons.
+
+## Blog
+
+Articles explaining the concepts behind each tool: https://www.steefware.com/blog/
+
+- [Aflossingstabel berekenen: zo werkt je maandbedrag](https://www.steefware.com/blog/aflossingstabel-berekenen.html) (Dutch)
+- [VVPR-bis uitgelegd: dividend aan 15% roerende voorheffing](https://www.steefware.com/blog/vvpr-bis-uitgelegd.html) (Dutch)
+- [See your live energy use on an LED strip: WLED + HomeWizard P1](https://www.steefware.com/blog/wled-p1-energy-light.html)
+- [How full is my tank? The math behind the Tank Level Calculator](https://www.steefware.com/blog/tank-level-calculator.html)
+- [How many solar panels fit on your roof?](https://www.steefware.com/blog/solar-panel-roof-layout.html)
+- [How solar production forecasts work](https://www.steefware.com/blog/solar-forecast-explained.html)
+- [What actually makes a password strong](https://www.steefware.com/blog/strong-passwords.html)
+- [Solving any triangle from three values](https://www.steefware.com/blog/triangle-calculator.html)
+- [Learn how the stock market works by losing fake money](https://www.steefware.com/blog/stocksim-learn-the-market.html)
+- [Sorry for this one: a Flappy Bird clone postmortem](https://www.steefware.com/blog/birdyflap-postmortem.html)
+
+## Support
+
+- [Ko-fi](https://ko-fi.com/steefware): Buy the developer a coffee.

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>See your live energy use on an LED strip: WLED + HomeWizard P1 | steefware blog</title>
+    <meta
+      name="description"
+      content="Turn your smart meter data into an ambient light: flash WLED with the HomeWizard P1 usermod onto an ESP32 straight from your browser. What you need, how it works, and troubleshooting tips."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/wled-p1-energy-light.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="See your live energy use on an LED strip: WLED + HomeWizard P1" />
+    <meta property="og:description" content="Flash WLED with the HomeWizard P1 usermod straight from your browser and turn smart meter data into light." />
+    <meta property="og:url" content="https://www.steefware.com/blog/wled-p1-energy-light.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "See your live energy use on an LED strip: WLED + HomeWizard P1",
+      "description": "Flash WLED with the HomeWizard P1 usermod onto an ESP32 straight from your browser and turn smart meter data into an ambient energy light.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/wled-p1-energy-light.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            See your live energy use on an LED strip: WLED + HomeWizard P1
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±6 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              Energy dashboards are great, but nobody opens an app to check
+              whether the dishwasher should run now. A light in the hallway
+              that glows <strong>green when your solar panels are exporting</strong>
+              and <strong>purple when you're importing from the grid</strong>
+              changes behaviour in a way no chart ever did. This is a weekend
+              project that requires zero soldering skills beyond three wires,
+              and — thanks to browser-based flashing — zero software
+              installation.
+            </p>
+
+            <h2>What do you need?</h2>
+            <ul>
+              <li>A <strong>HomeWizard P1 meter</strong> plugged into the P1 port of your digital electricity meter (with the local API enabled in the HomeWizard app).</li>
+              <li>An <strong>ESP32 board</strong> (a few euros from the usual places).</li>
+              <li>An addressable LED strip, e.g. <strong>WS2812B</strong>.</li>
+              <li>A USB cable and a browser that supports Web Serial: <strong>Chrome or Edge</strong> on desktop.</li>
+            </ul>
+
+            <h2>How does flashing from the browser work?</h2>
+            <p>
+              The <a href="/wled-p1-flasher/">steefware WLED P1 Flasher</a>
+              uses <strong>ESP Web Tools</strong>, which talks to the ESP32
+              over the Web Serial API. You plug the board into USB, click
+              <em>Install</em>, pick the serial port, and the browser writes a
+              prebuilt <strong>WLED firmware with the HomeWizard P1 usermod</strong>
+              to the chip. No Arduino IDE, no Python, no drivers hunt (on most
+              systems), no command line.
+            </p>
+
+            <h2>What does the usermod actually do?</h2>
+            <p>
+              WLED is the de-facto standard firmware for addressable LEDs.
+              The P1 usermod polls the HomeWizard P1 meter's local REST API
+              on your LAN — typically <code>http://&lt;meter-ip&gt;/api/v1/data</code>
+              — a few times per second and maps the current net power to the
+              strip:
+            </p>
+            <ul>
+              <li><strong>Importing</strong> from the grid → purple, more LEDs as the load rises.</li>
+              <li><strong>Exporting</strong> solar surplus → green, more LEDs as you export more.</li>
+              <li>Everything stays <strong>local</strong>: no cloud, no account, meter data never leaves your network.</li>
+            </ul>
+            <p>
+              Because it is still plain WLED underneath, you keep the normal
+              WLED app, effects, and home-automation integrations
+              (Home Assistant discovers it automatically).
+            </p>
+
+            <h2>Step by step</h2>
+            <ol>
+              <li>Enable the <em>local API</em> for your P1 meter in the HomeWizard Energy app (Settings → Meters → your meter).</li>
+              <li>Connect the ESP32 via USB and open the <a href="/wled-p1-flasher/">WLED P1 Flasher</a> in Chrome or Edge.</li>
+              <li>Click <em>Install</em>, select the serial port, and wait ±2 minutes.</li>
+              <li>Connect to the <code>WLED-AP</code> Wi-Fi network the board creates, and enter your home Wi-Fi credentials.</li>
+              <li>In the WLED settings, open the usermod page and fill in the IP address of your P1 meter.</li>
+              <li>Wire the LED strip (5V, GND, and data — GPIO2 by default) and watch your house breathe.</li>
+            </ol>
+
+            <h2>Troubleshooting</h2>
+            <h3>The browser doesn't show a serial port</h3>
+            <p>
+              Use Chrome or Edge (Firefox and Safari don't support Web
+              Serial). Try a different USB cable — many are charge-only. On
+              Windows, some boards need the CP210x or CH340 driver.
+            </p>
+            <h3>The strip stays dark</h3>
+            <p>
+              Check the usermod settings for the meter IP, and give the meter
+              a fixed IP in your router's DHCP settings so it can't wander.
+              Also verify the local API toggle is on in the HomeWizard app.
+            </p>
+            <h3>Flashing fails halfway</h3>
+            <p>
+              Hold the <em>BOOT</em> button on the ESP32 while the connection
+              is being made, and avoid USB hubs.
+            </p>
+
+            <h2>Is this safe for my meter?</h2>
+            <p>
+              Yes. The P1 port is read-only by design, and the usermod only
+              reads the same local API the HomeWizard app itself uses.
+            </p>
+          </div>
+
+          <a href="/wled-p1-flasher/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>WLED P1 Flasher</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Flash WLED with the HomeWizard P1 usermod straight from your browser.</p>
+            <div class="sw-card-bar"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

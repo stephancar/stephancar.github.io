@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>steefware blog — the ideas and math behind simple free web tools</title>
+    <meta
+      name="description"
+      content="Articles explaining the concepts behind the steefware tools: mortgage repayment tables, Belgian VVPR-bis dividends, WLED energy lights, tank level math, solar panel layout, strong passwords and more."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="steefware blog" />
+    <meta property="og:description" content="The ideas and math behind steefware's simple, free web tools." />
+    <meta property="og:url" content="https://www.steefware.com/blog/" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "steefware blog",
+      "url": "https://www.steefware.com/blog/",
+      "description": "Articles explaining the concepts behind steefware's simple, free web tools.",
+      "publisher": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" }
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1.5rem;">
+        <section style="position: relative;">
+          <div class="sw-panel">
+            <h1 class="sw-h1">blog</h1>
+            <p class="sw-lead" style="margin: 1.5rem 0 0;">
+              The ideas and math behind the tools. Serious articles for the
+              serious tools, and honest apologies for the rest.
+            </p>
+            <div class="sw-deco" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <section style="margin-top: 3rem;">
+          <h2 class="sw-kicker">Serious articles</h2>
+          <div class="sw-grid">
+            <a href="/blog/aflossingstabel-berekenen.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>Aflossingstabel berekenen: zo werkt je maandbedrag</h3>
+                <span class="sw-badge sw-badge--amber">NL</span>
+              </div>
+              <p>Hoe een annuïteit werkt, waarom je eerst vooral interest betaalt, en hoe je zelf je aflossingstabel opstelt.</p>
+              <div class="sw-card-bar"></div>
+            </a>
+
+            <a href="/blog/vvpr-bis-uitgelegd.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>VVPR-bis uitgelegd: dividend aan 15%</h3>
+                <span class="sw-badge sw-badge--amber">NL</span>
+              </div>
+              <p>De voorwaarden, de wachttermijnen en een rekenvoorbeeld voor de verlaagde roerende voorheffing op dividenden.</p>
+              <div class="sw-card-bar"></div>
+            </a>
+
+            <a href="/blog/wled-p1-energy-light.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>See your live energy use on an LED strip</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>Flash WLED with the HomeWizard P1 usermod straight from your browser and turn your smart meter data into light.</p>
+              <div class="sw-card-bar"></div>
+            </a>
+
+            <a href="/blog/tank-level-calculator.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>How full is my tank, really?</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>Why 50&nbsp;cm on the dipstick is not 50% of the volume — the circular segment math behind tank levels.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/blog/solar-panel-roof-layout.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>How many solar panels fit on your roof?</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>Panel dimensions, edge setbacks, portrait vs landscape — the geometry your installer's quote glosses over.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/blog/solar-forecast-explained.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>How solar production forecasts work</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>From cloud cover to kilowatt-hours: what goes into predicting what your panels will produce tomorrow.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/blog/strong-passwords.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>What actually makes a password strong</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>Length beats cleverness. A short tour of entropy, and why "Tr0ub4dor&amp;3" lost to four random words.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/blog/triangle-calculator.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>Solving any triangle from three values</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>Law of sines, law of cosines, Heron's formula, and the one case where the answer is "it depends".</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+          </div>
+        </section>
+
+        <section style="margin-top: 3rem;">
+          <h2 class="sw-kicker">Fun &amp; experiments</h2>
+          <div class="sw-grid">
+            <a href="/blog/stocksim-learn-the-market.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>Learn how the market works by losing fake money</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>StockSim is not financial advice. It is financial anti-advice, and that is the point.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/blog/birdyflap-postmortem.html" class="sw-card sw-focusable">
+              <div class="sw-card-head">
+                <h3>Sorry for this one: a Birdy Flap postmortem</h3>
+                <span class="sw-badge">EN</span>
+              </div>
+              <p>What building a Flappy Bird clone teaches you about gravity, game feel, and shame.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+          </div>
+        </section>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/">home</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+            <a href="/blog/feed.xml">RSS</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

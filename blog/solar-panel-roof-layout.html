@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>How many solar panels fit on your roof? The geometry explained | steefware blog</title>
+    <meta
+      name="description"
+      content="Panel dimensions, edge setbacks, portrait vs landscape orientation and obstacles: how to work out how many solar panels really fit on a roof, and why quotes often overestimate."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/solar-panel-roof-layout.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="How many solar panels fit on your roof?" />
+    <meta property="og:description" content="Panel dimensions, edge setbacks, portrait vs landscape — the geometry your installer's quote glosses over." />
+    <meta property="og:url" content="https://www.steefware.com/blog/solar-panel-roof-layout.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How many solar panels fit on your roof? The geometry explained",
+      "description": "Panel dimensions, edge setbacks, portrait vs landscape orientation and obstacles: how to work out how many solar panels really fit on a roof.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/solar-panel-roof-layout.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            How many solar panels fit on your roof?
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±5 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              "Your roof fits 14 panels" says one quote; "18 panels" says the
+              next, for the same roof. Who's right? Panel count is pure
+              geometry, and you can check it yourself with a tape measure —
+              or with <a href="/solarfit/">SolarFit</a>. Here is what the
+              calculation actually involves.
+            </p>
+
+            <h2>How big is a solar panel?</h2>
+            <p>
+              A typical residential panel today is roughly
+              <strong>1.76&nbsp;m × 1.13&nbsp;m</strong> (around 435–460&nbsp;Wp).
+              Larger formats exist, but bigger panels are heavier to handle
+              and give you less layout flexibility — on small roof faces, two
+              medium panels often fit where one XL panel doesn't.
+            </p>
+
+            <h2>You can't use the whole roof</h2>
+            <p>Three things shrink the usable area:</p>
+            <ul>
+              <li><strong>Edge setbacks.</strong> Installers keep a margin from ridges, eaves and side edges — commonly 30&nbsp;cm or more — for wind load (suction is strongest at edges and corners) and to keep the array serviceable. Local rules and mounting-system specs vary.</li>
+              <li><strong>Obstacles.</strong> Chimneys, velux windows, vent pipes and dormers each knock out at least one panel, and their shadow can make neighbouring positions pointless too.</li>
+              <li><strong>Mounting gaps.</strong> Clamps need ±2&nbsp;cm between panels; rows on flat roofs need much larger gaps to avoid self-shading.</li>
+            </ul>
+
+            <h2>Portrait or landscape?</h2>
+            <p>
+              On a pitched roof this is the decision that usually makes or
+              breaks a panel. Take a roof face of 7.2&nbsp;m wide ×
+              3.8&nbsp;m high (after setbacks):
+            </p>
+            <table>
+              <tr><th>Orientation</th><th>Columns</th><th>Rows</th><th>Panels</th></tr>
+              <tr><td>Portrait (1.13 wide × 1.76 high)</td><td>6</td><td>2</td><td>12</td></tr>
+              <tr><td>Landscape (1.76 wide × 1.13 high)</td><td>4</td><td>3</td><td>12</td></tr>
+              <tr><td><strong>Mixed: 2 rows portrait + 1 row landscape</strong></td><td>—</td><td>—</td><td><strong>16</strong></td></tr>
+            </table>
+            <p>
+              Same roof, four extra panels — a third more production — just by
+              mixing orientations. This is exactly the kind of enumeration a
+              human quoting ten roofs a day doesn't do, and a computer does
+              instantly.
+            </p>
+
+            <h2>Does more panels always mean more value?</h2>
+            <p>
+              Not automatically. A panel squeezed into a spot that's shaded
+              half the day produces disproportionately little (though
+              optimizers and modern half-cell panels soften the blow). And
+              your inverter caps total output. But in most cases, with panel
+              prices where they are, filling the geometry is the right call —
+              the fixed costs (scaffolding, inverter, labour) dominate.
+            </p>
+
+            <h2>Check your own roof</h2>
+            <p>
+              <a href="/solarfit/">SolarFit</a> lets you enter your roof
+              dimensions and obstacles, then tries panel layouts for you —
+              geometry first, assumptions explicit. Free, in your browser,
+              no cookies. Bring your own tape measure.
+            </p>
+          </div>
+
+          <a href="/solarfit/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>SolarFit</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Determine optimal solar panel fitment on your roof.</p>
+            <div class="sw-card-bar sw-card-bar--amber"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

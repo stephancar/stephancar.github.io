@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>steefware blog</title>
+    <link>https://www.steefware.com/blog/</link>
+    <description>The ideas and math behind steefware's simple, free web tools.</description>
+    <language>en</language>
+    <atom:link href="https://www.steefware.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Aflossingstabel berekenen: zo werkt je maandbedrag</title>
+      <link>https://www.steefware.com/blog/aflossingstabel-berekenen.html</link>
+      <guid>https://www.steefware.com/blog/aflossingstabel-berekenen.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Hoe een annuïteit werkt, waarom je eerst vooral interest betaalt, en hoe je zelf je aflossingstabel opstelt. (Nederlands)</description>
+    </item>
+    <item>
+      <title>VVPR-bis uitgelegd: dividend aan 15% roerende voorheffing</title>
+      <link>https://www.steefware.com/blog/vvpr-bis-uitgelegd.html</link>
+      <guid>https://www.steefware.com/blog/vvpr-bis-uitgelegd.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>De voorwaarden, de wachttermijnen en een rekenvoorbeeld voor de verlaagde roerende voorheffing op dividenden. (Nederlands)</description>
+    </item>
+    <item>
+      <title>See your live energy use on an LED strip: WLED + HomeWizard P1</title>
+      <link>https://www.steefware.com/blog/wled-p1-energy-light.html</link>
+      <guid>https://www.steefware.com/blog/wled-p1-energy-light.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Flash WLED with the HomeWizard P1 usermod straight from your browser and turn your smart meter data into an ambient energy light.</description>
+    </item>
+    <item>
+      <title>How full is my tank, really?</title>
+      <link>https://www.steefware.com/blog/tank-level-calculator.html</link>
+      <guid>https://www.steefware.com/blog/tank-level-calculator.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Why 50 cm on the dipstick is not 50% of the volume — the circular segment math behind tank levels.</description>
+    </item>
+    <item>
+      <title>How many solar panels fit on your roof?</title>
+      <link>https://www.steefware.com/blog/solar-panel-roof-layout.html</link>
+      <guid>https://www.steefware.com/blog/solar-panel-roof-layout.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Panel dimensions, edge setbacks, portrait vs landscape — the geometry your installer's quote glosses over.</description>
+    </item>
+    <item>
+      <title>How solar production forecasts work</title>
+      <link>https://www.steefware.com/blog/solar-forecast-explained.html</link>
+      <guid>https://www.steefware.com/blog/solar-forecast-explained.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>From cloud cover to kilowatt-hours: what goes into predicting what your panels will produce tomorrow.</description>
+    </item>
+    <item>
+      <title>What actually makes a password strong</title>
+      <link>https://www.steefware.com/blog/strong-passwords.html</link>
+      <guid>https://www.steefware.com/blog/strong-passwords.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Length beats cleverness. A short tour of password entropy, and why four random words beat "Tr0ub4dor&amp;3".</description>
+    </item>
+    <item>
+      <title>Solving any triangle from three values</title>
+      <link>https://www.steefware.com/blog/triangle-calculator.html</link>
+      <guid>https://www.steefware.com/blog/triangle-calculator.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>Law of sines, law of cosines, Heron's formula, and the one case where the answer is "it depends".</description>
+    </item>
+    <item>
+      <title>Learn how the market works by losing fake money</title>
+      <link>https://www.steefware.com/blog/stocksim-learn-the-market.html</link>
+      <guid>https://www.steefware.com/blog/stocksim-learn-the-market.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>StockSim is not financial advice. It is financial anti-advice, and that is the point.</description>
+    </item>
+    <item>
+      <title>Sorry for this one: a Birdy Flap postmortem</title>
+      <link>https://www.steefware.com/blog/birdyflap-postmortem.html</link>
+      <guid>https://www.steefware.com/blog/birdyflap-postmortem.html</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <description>What building a Flappy Bird clone teaches you about gravity, game feel, and shame.</description>
+    </item>
+  </channel>
+</rss>

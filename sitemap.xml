@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.steefware.com/</loc><lastmod>2026-07-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.steefware.com/blog/</loc><lastmod>2026-07-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- blog articles -->
+  <url><loc>https://www.steefware.com/blog/aflossingstabel-berekenen.html</loc><lastmod>2026-07-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.steefware.com/blog/vvpr-bis-uitgelegd.html</loc><lastmod>2026-07-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.steefware.com/blog/wled-p1-energy-light.html</loc><lastmod>2026-07-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.steefware.com/blog/tank-level-calculator.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/solar-panel-roof-layout.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/solar-forecast-explained.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/strong-passwords.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/triangle-calculator.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/stocksim-learn-the-market.html</loc><lastmod>2026-07-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.steefware.com/blog/birdyflap-postmortem.html</loc><lastmod>2026-07-08</lastmod><priority>0.5</priority></url>
+
+  <!-- tools -->
+  <url><loc>https://www.steefware.com/aflossingstabel/</loc><lastmod>2026-07-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.steefware.com/vvprbis/</loc><lastmod>2026-07-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.steefware.com/tanklevel/</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.steefware.com/solarfit/</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.steefware.com/solarforecast/</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.steefware.com/passwordgenerator/</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.steefware.com/wled-p1-flasher/</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.steefware.com/trianglecalculator/</loc><lastmod>2026-07-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.steefware.com/stocksim/</loc><lastmod>2026-07-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.steefware.com/BirdyFlap/</loc><lastmod>2026-07-08</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.steefware.com/helloworld/</loc><lastmod>2026-07-08</lastmod><priority>0.3</priority></url>
+</urlset>

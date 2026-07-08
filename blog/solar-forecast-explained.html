@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>How solar production forecasts work | steefware blog</title>
+    <meta
+      name="description"
+      content="From cloud cover to kilowatt-hours: how solar production forecasts turn weather models, panel orientation and system losses into a prediction of what your panels will produce tomorrow."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/solar-forecast-explained.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="How solar production forecasts work" />
+    <meta property="og:description" content="From cloud cover to kilowatt-hours: what goes into predicting what your panels will produce tomorrow." />
+    <meta property="og:url" content="https://www.steefware.com/blog/solar-forecast-explained.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How solar production forecasts work",
+      "description": "How solar production forecasts turn weather models, panel orientation and system losses into a prediction of what your panels will produce tomorrow.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/solar-forecast-explained.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            How solar production forecasts work
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±5 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              "Look how Sun Today!" is what
+              <a href="/solarforecast/">Solar Forecast</a> promises, but under
+              the joke sits a genuinely interesting chain of physics: from a
+              weather model's cloud prediction to the number of kilowatt-hours
+              your inverter will report tomorrow evening. Here is that chain,
+              link by link.
+            </p>
+
+            <h2>Step 1: How much sunlight reaches the ground?</h2>
+            <p>
+              Weather models predict <strong>irradiance</strong> — solar power
+              per square metre. The key quantity is
+              <strong>GHI</strong> (global horizontal irradiance), which
+              combines direct beam sunlight with diffuse light scattered by
+              the sky. On a clear summer day in Belgium GHI peaks around
+              900&nbsp;W/m²; under a thick December overcast it can stay below
+              50&nbsp;W/m². Cloud cover is by far the biggest and hardest
+              part of the forecast — everything else is deterministic.
+            </p>
+
+            <h2>Step 2: How much of it hits <em>your</em> panels?</h2>
+            <p>
+              Your panels are not horizontal. The forecast must project the
+              irradiance onto the plane of your roof, which depends on:
+            </p>
+            <ul>
+              <li><strong>Orientation (azimuth):</strong> south-facing catches the most annual energy; east/west spreads it over morning/evening.</li>
+              <li><strong>Tilt:</strong> ±35° is optimal at Benelux latitudes for annual yield; flatter favours summer, steeper favours winter.</li>
+              <li><strong>Sun position:</strong> computed exactly from date, time and location — the one part of the chain with zero uncertainty.</li>
+            </ul>
+
+            <h2>Step 3: From sunlight to electricity</h2>
+            <p>
+              A "6.4&nbsp;kWp" installation produces 6.4&nbsp;kW only in lab
+              conditions. Real output applies a stack of losses:
+            </p>
+            <table>
+              <tr><th>Loss</th><th>Typical</th></tr>
+              <tr><td>Temperature (panels lose ±0.3–0.4%/°C above 25&nbsp;°C)</td><td>0–10%</td></tr>
+              <tr><td>Inverter efficiency</td><td>2–4%</td></tr>
+              <tr><td>Cabling, mismatch, dirt</td><td>2–5%</td></tr>
+              <tr><td>Shading</td><td>site-specific</td></tr>
+            </table>
+            <p>
+              Counter-intuitively, a bright <em>cool</em> spring day often
+              beats a scorching July day: at 60&nbsp;°C cell temperature a
+              panel gives up more than 10% of its rated power.
+            </p>
+
+            <h2>Why would I want a forecast at all?</h2>
+            <ul>
+              <li><strong>Shift consumption:</strong> run the dishwasher, washing machine or car charger when production peaks — especially valuable with a capacity tariff or dynamic prices.</li>
+              <li><strong>Battery strategy:</strong> if tomorrow is sunny, let a home battery run empty tonight instead of charging it from the grid.</li>
+              <li><strong>Sanity checks:</strong> if the forecast said 25&nbsp;kWh and your inverter logged 6, something is wrong — a tripped string, a very dirty panel, or new shading.</li>
+            </ul>
+
+            <h2>How accurate are these forecasts?</h2>
+            <p>
+              Day-ahead forecasts are typically within 10–20% on
+              clear or fully overcast days, and worst on partly-cloudy days
+              where a single cloud bank's timing decides everything.
+              Aggregated over a week they're remarkably good; hour-by-hour on
+              a cumulus afternoon, treat them as a vibe.
+            </p>
+
+            <h2>See it for your roof</h2>
+            <p>
+              <a href="/solarforecast/">Solar Forecast</a> combines the
+              weather forecast for your location with your panel setup and
+              shows the expected production. Free, no cookies, no account —
+              look how Sun Today.
+            </p>
+          </div>
+
+          <a href="/solarforecast/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>Solar Forecast</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Expected solar production based on the weather, for your location.</p>
+            <div class="sw-card-bar sw-card-bar--amber"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

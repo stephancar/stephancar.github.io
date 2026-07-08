@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>How full is my tank, really? The math behind tank levels | steefware blog</title>
+    <meta
+      name="description"
+      content="Why 50 cm on the dipstick of a horizontal oil or water tank is not 50% of the volume: the circular segment formula behind the steefware Tank Level Calculator, explained with an example."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/tank-level-calculator.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="How full is my tank, really?" />
+    <meta property="og:description" content="Why a half-height reading is not half the volume — the circular segment math behind tank levels." />
+    <meta property="og:url" content="https://www.steefware.com/blog/tank-level-calculator.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How full is my tank, really? The math behind tank levels",
+      "description": "Why a half-height dipstick reading is not half the volume: the circular segment formula behind the Tank Level Calculator.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/tank-level-calculator.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            How full is my tank, really?
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±4 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              You stick a dipstick into your heating oil tank, it comes out
+              wet at 50&nbsp;cm on a tank that is 100&nbsp;cm tall, and you
+              conclude: half full. For a rectangular tank, correct. For the
+              far more common <strong>horizontal cylindrical tank</strong>,
+              also correct — but <em>only</em> at exactly the halfway point,
+              and wildly wrong everywhere else. At 25&nbsp;cm you don't have
+              25% left; you have about <strong>19.6%</strong>.
+            </p>
+
+            <h2>Why isn't the level proportional to the volume?</h2>
+            <p>
+              Because the cross-section of a lying cylinder is a circle. Near
+              the bottom and the top the circle is narrow, in the middle it is
+              at its widest. Each extra centimetre of liquid level therefore
+              adds a different amount of volume: little at the bottom, a lot
+              around the middle, little again near the top.
+            </p>
+
+            <h2>The circular segment formula</h2>
+            <p>
+              The liquid in a horizontal cylinder forms a
+              <strong>circular segment</strong>. For a tank with radius
+              <code>r</code>, length <code>L</code> and liquid height
+              <code>h</code>:
+            </p>
+            <pre><code>V = L × [ r² × acos((r − h) / r) − (r − h) × √(2rh − h²) ]</code></pre>
+            <p>
+              The first term is the pie-slice area swept by the liquid, the
+              second subtracts the dry triangle above the chord. Not the kind
+              of thing you want to punch into a phone calculator at the
+              bottom of the basement stairs.
+            </p>
+
+            <h2>An example</h2>
+            <p>
+              Tank: Ø 1.0&nbsp;m (r = 0.5&nbsp;m), length 2.5&nbsp;m, so a
+              full volume of π × 0.5² × 2.5 ≈ <strong>1,963&nbsp;litres</strong>.
+            </p>
+            <table>
+              <tr><th>Dipstick reading</th><th>Naive "percent"</th><th>Actual volume</th><th>Actual percent</th></tr>
+              <tr><td>10 cm</td><td>10%</td><td>≈ 103 L</td><td>5.2%</td></tr>
+              <tr><td>25 cm</td><td>25%</td><td>≈ 384 L</td><td>19.6%</td></tr>
+              <tr><td>50 cm</td><td>50%</td><td>≈ 982 L</td><td>50%</td></tr>
+              <tr><td>75 cm</td><td>75%</td><td>≈ 1,579 L</td><td>80.4%</td></tr>
+              <tr><td>90 cm</td><td>90%</td><td>≈ 1,860 L</td><td>94.8%</td></tr>
+            </table>
+            <p>
+              The error is largest exactly where it matters: when the tank is
+              getting empty and you're deciding whether to order oil this week
+              or next month.
+            </p>
+
+            <h2>What about vertical or rectangular tanks?</h2>
+            <p>
+              A vertical cylinder and a rectangular tank <em>are</em> linear:
+              percentage of height equals percentage of volume. The trap is
+              purely the lying cylinder — which, of course, is what most
+              buried and basement fuel tanks are.
+            </p>
+
+            <h2>Skip the math</h2>
+            <p>
+              The <a href="/tanklevel/">steefware Tank Level Calculator</a>
+              does the segment math for you: enter the tank shape, its
+              dimensions and your measurement, and get litres remaining.
+              It runs entirely in your browser — free, no cookies.
+            </p>
+          </div>
+
+          <a href="/tanklevel/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>Tank Level Calculator</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>From dipstick centimetres to actual litres, for any tank shape.</p>
+            <div class="sw-card-bar sw-card-bar--amber"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

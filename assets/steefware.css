@@ -1,0 +1,443 @@
+/* ============================================================
+   steefware.css — shared steefware.com design system
+   Neubrutalist: white paper, black ink, hard shadows,
+   fuchsia + amber accents. No build step, no dependencies.
+
+   Served from the hub repo at /assets/steefware.css.
+   Every steefware app (same origin) links it with:
+     <link rel="stylesheet" href="/assets/steefware.css">
+   Dark apps add class="sw-dark" on <body> for inverted chrome.
+   ============================================================ */
+
+:root {
+  --sw-fuchsia: #d946ef;
+  --sw-amber: #fcd34d;
+  --sw-paper: #ffffff;
+  --sw-ink: #000000;
+  --sw-ink-soft: rgba(0, 0, 0, 0.65);
+  --sw-shadow: #000000;
+  --sw-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --sw-radius-sm: 0.5rem;
+  --sw-radius: 1rem;
+  --sw-radius-lg: 1.5rem;
+}
+
+/* Inverted chrome for apps that keep a dark canvas */
+.sw-dark {
+  --sw-paper: #0b0f1a;
+  --sw-ink: #ffffff;
+  --sw-ink-soft: rgba(255, 255, 255, 0.7);
+  --sw-shadow: #000000;
+}
+
+/* ---------- base ---------- */
+
+.sw-page {
+  margin: 0;
+  min-height: 100%;
+  background: var(--sw-paper);
+  color: var(--sw-ink);
+  font-family: var(--sw-font);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.sw-container {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) { .sw-container { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .sw-container { padding: 0 2rem; } }
+
+.sw-focusable:focus { outline: none; }
+.sw-focusable:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--sw-paper), 0 0 0 8px var(--sw-ink);
+}
+
+/* ---------- header ---------- */
+
+.sw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.sw-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--sw-ink);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--sw-ink);
+  background: var(--sw-paper);
+  text-decoration: none;
+  box-shadow: 4px 4px 0 0 var(--sw-shadow);
+  transition: transform 0.15s ease-out;
+}
+.sw-logo:hover { transform: translate(2px, -2px); }
+
+.sw-logo-dot {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background: var(--sw-fuchsia);
+}
+
+.sw-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sw-nav a {
+  color: var(--sw-ink);
+  border-radius: var(--sw-radius-sm);
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: color-mix(in srgb, var(--sw-ink) 30%, transparent);
+  transition: text-decoration-color 0.15s;
+}
+.sw-nav a:hover { text-decoration-color: var(--sw-ink); }
+
+/* ---------- panels & cards ---------- */
+
+.sw-panel {
+  position: relative;
+  border: 2px solid var(--sw-ink);
+  border-radius: var(--sw-radius-lg);
+  background: var(--sw-paper);
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0 0 var(--sw-shadow);
+}
+@media (min-width: 640px) { .sw-panel { padding: 2.5rem; } }
+
+.sw-card {
+  display: block;
+  border: 2px solid var(--sw-ink);
+  border-radius: var(--sw-radius);
+  background: var(--sw-paper);
+  color: var(--sw-ink);
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: 6px 6px 0 0 var(--sw-shadow);
+  transition: transform 0.15s ease-out;
+}
+.sw-card:hover { transform: translate(4px, -4px); }
+
+.sw-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sw-card h3, .sw-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.sw-card p, .sw-card-text {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--sw-ink);
+}
+
+.sw-card-bar {
+  margin-top: 1rem;
+  height: 0.5rem;
+  width: 4rem;
+  border-radius: 9999px;
+  background: var(--sw-fuchsia);
+}
+.sw-card-bar--amber { background: var(--sw-amber); }
+
+.sw-badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  border: 2px solid var(--sw-ink);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--sw-ink);
+  background: var(--sw-paper);
+  box-shadow: 3px 3px 0 0 var(--sw-shadow);
+  transition: transform 0.15s ease-out;
+}
+.sw-card:hover .sw-badge { transform: translate(2px, -2px); }
+
+.sw-badge--amber { background: var(--sw-amber); color: #000; }
+.sw-badge--fuchsia { background: var(--sw-fuchsia); color: #fff; }
+
+/* ---------- buttons ---------- */
+
+.sw-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--sw-ink);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-family: var(--sw-font);
+  font-size: 0.875rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--sw-ink);
+  background: var(--sw-paper);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 0 var(--sw-shadow);
+  transition: transform 0.15s ease-out;
+}
+.sw-btn:hover { transform: translate(2px, -2px); }
+.sw-btn--amber { background: var(--sw-amber); color: #000; }
+.sw-btn--fuchsia { background: var(--sw-fuchsia); color: #fff; }
+
+/* ---------- sections & type ---------- */
+
+.sw-kicker {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sw-h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+@media (min-width: 640px) { .sw-h1 { font-size: 3.75rem; } }
+
+.sw-lead {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+@media (min-width: 640px) { .sw-lead { font-size: 1.25rem; } }
+
+.sw-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) { .sw-grid { grid-template-columns: 1fr 1fr; } }
+
+.sw-deco {
+  pointer-events: none;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  display: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  transform: rotate(6deg);
+  border: 2px solid var(--sw-ink);
+  border-radius: var(--sw-radius);
+  background: var(--sw-amber);
+  box-shadow: 4px 4px 0 0 var(--sw-shadow);
+}
+@media (min-width: 640px) { .sw-deco { display: block; } }
+
+/* ---------- footer ---------- */
+
+.sw-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 2px solid var(--sw-ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sw-footer a {
+  color: var(--sw-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: color-mix(in srgb, var(--sw-ink) 30%, transparent);
+}
+.sw-footer a:hover { text-decoration-color: var(--sw-ink); }
+
+.sw-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sw-muted { color: var(--sw-ink-soft); }
+
+/* ---------- article prose (blog) ---------- */
+
+.sw-prose {
+  max-width: 42rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.sw-prose h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.sw-prose h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.sw-prose p { margin: 0.9rem 0; }
+
+.sw-prose a {
+  color: var(--sw-ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--sw-fuchsia);
+}
+.sw-prose a:hover { text-decoration-color: var(--sw-ink); }
+
+.sw-prose ul, .sw-prose ol { padding-left: 1.5rem; margin: 0.9rem 0; }
+.sw-prose li { margin: 0.35rem 0; }
+
+.sw-prose table {
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  width: 100%;
+  font-size: 0.9375rem;
+}
+.sw-prose th, .sw-prose td {
+  border: 2px solid var(--sw-ink);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.sw-prose th { background: var(--sw-amber); font-weight: 900; color: #000; }
+
+.sw-prose code {
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", Menlo, monospace;
+  font-size: 0.875em;
+  background: color-mix(in srgb, var(--sw-ink) 8%, transparent);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+}
+
+.sw-prose pre {
+  border: 2px solid var(--sw-ink);
+  border-radius: var(--sw-radius-sm);
+  box-shadow: 4px 4px 0 0 var(--sw-shadow);
+  padding: 1rem;
+  overflow-x: auto;
+}
+.sw-prose pre code { background: none; padding: 0; }
+
+.sw-prose blockquote {
+  margin: 1.25rem 0;
+  border-left: 6px solid var(--sw-fuchsia);
+  padding: 0.25rem 0 0.25rem 1rem;
+  font-weight: 600;
+}
+
+.sw-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--sw-ink-soft);
+}
+
+/* ---------- app chrome (header/footer strips inside tools) ----------
+   Minimal-footprint wrapper for single-file apps: a slim branded top
+   strip and a footer line. Uses the same tokens; on dark apps the
+   .sw-dark variant flips paper/ink. */
+
+.sw-appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  font-family: var(--sw-font);
+}
+
+.sw-appbar-title {
+  font-size: 0.875rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--sw-ink);
+  margin: 0;
+}
+
+.sw-appfooter {
+  padding: 1.25rem 1rem 1.5rem;
+  font-family: var(--sw-font);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--sw-ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.sw-appfooter a {
+  color: var(--sw-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--sw-fuchsia);
+}
+.sw-appfooter a:hover { text-decoration-color: var(--sw-ink); }
+
+.sw-appintro {
+  font-family: var(--sw-font);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--sw-ink);
+  max-width: 42rem;
+  padding: 0 1rem;
+}
+.sw-appintro h2 {
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  margin: 1.5rem 0 0.5rem;
+}

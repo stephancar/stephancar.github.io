@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Solving any triangle from three values | steefware blog</title>
+    <meta
+      name="description"
+      content="Law of sines, law of cosines and Heron's formula: how a triangle calculator solves any triangle from three known values — and the SSA case where two answers are correct."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/triangle-calculator.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="Solving any triangle from three values" />
+    <meta property="og:description" content="Law of sines, law of cosines, Heron's formula, and the one case where the answer is 'it depends'." />
+    <meta property="og:url" content="https://www.steefware.com/blog/triangle-calculator.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Solving any triangle from three values",
+      "description": "How a triangle calculator solves any triangle from three known values using the law of sines, law of cosines and Heron's formula.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/triangle-calculator.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            Solving any triangle from three values
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±4 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              The <a href="/trianglecalculator/">Triangle Calculator</a>'s
+              official tagline is "I many smart now!", which undersells it
+              slightly: give it any three independent values of a triangle —
+              sides or angles — and it hands back everything else: the
+              missing sides, the missing angles, the area, the perimeter.
+              Here's the complete bag of tricks it uses, which is also the
+              entire trigonometry you need for woodworking, roofing, or
+              helping with homework you claimed to remember.
+            </p>
+
+            <h2>Which three values are enough?</h2>
+            <p>
+              A triangle has six quantities: three sides (a, b, c) and three
+              angles (A, B, C). Knowing three of them pins down the triangle —
+              with two exceptions. Three angles (AAA) only fix the
+              <em>shape</em>, not the size: every scale of that triangle has
+              the same angles. And one particular combination gives two valid
+              answers (see below).
+            </p>
+
+            <h2>The four solvable cases</h2>
+            <table>
+              <tr><th>You know</th><th>Case</th><th>Tool for the job</th></tr>
+              <tr><td>3 sides</td><td>SSS</td><td>law of cosines</td></tr>
+              <tr><td>2 sides + the angle between them</td><td>SAS</td><td>law of cosines</td></tr>
+              <tr><td>2 angles + any side</td><td>ASA / AAS</td><td>law of sines</td></tr>
+              <tr><td>2 sides + a non-included angle</td><td>SSA</td><td>law of sines, carefully</td></tr>
+            </table>
+
+            <h3>Law of cosines</h3>
+            <pre><code>c² = a² + b² − 2ab·cos(C)</code></pre>
+            <p>
+              Pythagoras with a correction term. When C = 90°, cos(C) = 0 and
+              it collapses into the a² + b² = c² you already know.
+            </p>
+
+            <h3>Law of sines</h3>
+            <pre><code>a / sin(A) = b / sin(B) = c / sin(C)</code></pre>
+            <p>
+              Every side divided by the sine of its opposite angle gives the
+              same ratio (the diameter of the circumscribed circle, if you
+              want to impress someone).
+            </p>
+
+            <h2>The ambiguous case: when two answers are both right</h2>
+            <p>
+              SSA — two sides and an angle that isn't between them — is the
+              famous trap. Example: a = 7, b = 10, A = 40°. The law of sines
+              gives sin(B) ≈ 0.918… but two angles have that sine: B ≈ 66.7°
+              <em>and</em> B ≈ 113.3°. Both produce a perfectly valid
+              triangle. A good calculator shows both solutions instead of
+              silently picking one; a bad one loses you a roof truss.
+            </p>
+
+            <h2>Area without knowing the height</h2>
+            <p>Two favourites:</p>
+            <pre><code>Area = ½ · a · b · sin(C)          (two sides + included angle)
+
+s = (a + b + c) / 2                (Heron's formula, three sides)
+Area = √( s(s−a)(s−b)(s−c) )</code></pre>
+            <p>
+              Heron's formula is 2,000 years old and still the best party
+              trick in geometry: area from nothing but the three side
+              lengths.
+            </p>
+
+            <h2>Try it</h2>
+            <p>
+              The <a href="/trianglecalculator/">Triangle Calculator</a> does
+              all of the above, shows the ambiguous case when it exists, and
+              draws the result. Free, no cookies, in your browser. You many
+              smart now too.
+            </p>
+          </div>
+
+          <a href="/trianglecalculator/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>Triangle Calculator</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Any triangle, solved from three known values.</p>
+            <div class="sw-card-bar sw-card-bar--amber"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

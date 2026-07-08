@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Sorry for this one: a Birdy Flap postmortem | steefware blog</title>
+    <meta
+      name="description"
+      content="What building a Flappy Bird clone teaches you about gravity tuning, one-button game design, difficulty curves and shame. A postmortem of Birdy Flap."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/birdyflap-postmortem.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="Sorry for this one: a Birdy Flap postmortem" />
+    <meta property="og:description" content="What building a Flappy Bird clone teaches you about gravity, game feel, and shame." />
+    <meta property="og:url" content="https://www.steefware.com/blog/birdyflap-postmortem.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-07-08" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Sorry for this one: a Birdy Flap postmortem",
+      "description": "What building a Flappy Bird clone teaches you about gravity tuning, one-button game design, difficulty curves and shame.",
+      "inLanguage": "en",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/birdyflap-postmortem.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Fun &amp; experiments · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            Sorry for this one: a Birdy Flap postmortem
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>July 8, 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±4 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              Every developer, at some point, builds a Flappy Bird clone.
+              It's not a choice, it's a life stage — like a first apartment
+              or a regrettable haircut. <a href="/BirdyFlap/">Birdy Flap</a>
+              is mine. The card on the homepage says "Sorry for this one" and
+              I stand by the apology. But since it exists anyway, here's what
+              building the world's most-cloned game actually teaches you.
+            </p>
+
+            <h2>Why is a one-button game so hard to build well?</h2>
+            <p>
+              Because there is nowhere to hide. A game with one input and
+              three rules lives or dies entirely on <strong>feel</strong>,
+              and feel is three numbers: gravity, flap impulse, and scroll
+              speed. Get them right and the game is "one more try" for an
+              hour. Get gravity 10% too high and it's "this is broken" in
+              four seconds. I changed those three constants more often than
+              everything else in the code combined.
+            </p>
+
+            <h2>The gravity problem</h2>
+            <p>
+              Real-ish physics (velocity += gravity × dt; position +=
+              velocity × dt) feels floaty and terrible for this genre. The
+              original Flappy Bird uses comically exaggerated gravity with a
+              sharp, instant flap impulse — the bird is less "bird" and more
+              "brick with anxiety". The lesson generalises: games simulate
+              <em>feelings</em>, not physics. Racing games fake grip, shooters
+              fake recoil, and flappy games fake a bird that responds to
+              guilt.
+            </p>
+
+            <h2>Why do people keep playing something so annoying?</h2>
+            <p>
+              The death loop is engineered, whether the developer knows it or
+              not:
+            </p>
+            <ul>
+              <li><strong>Deaths are always your fault.</strong> The pipes never move; the physics never changes. No RNG to blame.</li>
+              <li><strong>Restarting is instant.</strong> Zero loading, zero menus. The next attempt starts before the shame lands.</li>
+              <li><strong>The score is one integer.</strong> Your entire self-worth compresses into "7", and your friend has "11".</li>
+            </ul>
+            <p>
+              That's the whole psychological machine. It's the same loop that
+              makes Wordle and speedrunning work, in its smallest possible
+              form.
+            </p>
+
+            <h2>What I'd tell anyone building one</h2>
+            <ol>
+              <li>Tune with real hands on a real phone. The same constants feel different on a 60&nbsp;Hz monitor with a keyboard.</li>
+              <li>Make the hitbox smaller than the sprite. Players think "that was close"; the game agrees generously.</li>
+              <li>Kill the bird on the ceiling too, or the optimal strategy becomes "hug the top", and optimal strategies are boring.</li>
+              <li>Ship it. It's a rite of passage, not a product.</li>
+            </ol>
+
+            <h2>Should you play it?</h2>
+            <p>
+              No. But you will. It's
+              <a href="/BirdyFlap/">right here</a>, it loads instantly, it
+              costs nothing, and it doesn't track you — the purest possible
+              distillation of wasting time. Sorry for this one.
+            </p>
+          </div>
+
+          <a href="/BirdyFlap/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>Birdy Flap</h3>
+              <span class="sw-badge">Open the game →</span>
+            </div>
+            <p>Sorry for this one.</p>
+            <div class="sw-card-bar sw-card-bar--amber"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

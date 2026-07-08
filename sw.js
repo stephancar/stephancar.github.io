@@ -1,8 +1,14 @@
 // steefware service worker
 // v2: network-first for pages so deployed updates are picked up immediately;
 // cached copies are only used when offline.
-const CACHE = "steefware-v2";
-const CORE = ["/", "/index.html", "/manifest.webmanifest", "/favicon.svg"];
+const CACHE = "steefware-v3";
+const CORE = [
+  "/",
+  "/index.html",
+  "/manifest.webmanifest",
+  "/favicon.svg",
+  "/assets/steefware.css",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

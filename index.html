@@ -2,211 +2,252 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- Keep your SVG favicon for browsers -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <!-- iOS "app mode" -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="steefware" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-
-    <!-- Better iPhone layout (safe areas / notch) -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
 
-    <title>steefware.com</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>steefware — simple free web tools: mortgage tables, VVPR-bis, solar, passwords &amp; games</title>
     <meta
       name="description"
-      content="Simple usefull tools. No cookies, no ads, but terribly indexed on Google so congrats for getting here"
+      content="steefware.com is a collection of free, simple, single-purpose web tools: mortgage repayment tables, Belgian VVPR-bis dividend planning, tank level and triangle calculators, solar panel tools, a password generator, a WLED energy light installer and a few games. No cookies, no ads, no accounts."
     />
+    <link rel="canonical" href="https://www.steefware.com/" />
 
-    <!-- Tiny "feels like an app" improvements -->
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="steefware — simple, free web tools" />
+    <meta
+      property="og:description"
+      content="Free single-purpose web tools: mortgage tables, VVPR-bis planning, solar tools, password generator, games. No cookies, no ads, no accounts."
+    />
+    <meta property="og:url" content="https://www.steefware.com/" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="steefware — simple, free web tools" />
+    <meta
+      name="twitter:description"
+      content="Free single-purpose web tools: mortgage tables, VVPR-bis planning, solar tools, password generator, games. No cookies, no ads."
+    />
+    <meta name="twitter:image" content="https://www.steefware.com/assets/og-image.png" />
+
+    <!-- Icons / PWA -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="steefware" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.steefware.com/#website",
+          "url": "https://www.steefware.com/",
+          "name": "steefware",
+          "description": "Free, simple, single-purpose web tools. No cookies, no ads, no accounts.",
+          "publisher": { "@id": "https://www.steefware.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.steefware.com/#person",
+          "name": "Stephan",
+          "url": "https://www.steefware.com/",
+          "sameAs": ["https://github.com/stephancar"]
+        },
+        {
+          "@type": "ItemList",
+          "name": "steefware tools",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "Aflossingstabel", "url": "https://www.steefware.com/aflossingstabel/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "nl", "description": "Gratis aflossingstabel voor hypotheek of lening: maandbedrag, kapitaal en interest per maand.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "VVPRBIS", "url": "https://www.steefware.com/vvprbis/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "nl", "description": "Planningstool voor Belgische VVPR-bis dividenden: wanneer kan je uitkeren aan 15% roerende voorheffing.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Tank Level Calculator", "url": "https://www.steefware.com/tanklevel/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "Calculate the fill level and remaining volume of a tank from a simple measurement.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "SolarFit", "url": "https://www.steefware.com/solarfit/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "Work out how many solar panels fit on a roof. Geometry first, assumptions explicit.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "Solar Forecast", "url": "https://www.steefware.com/solarforecast/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "Forecast of expected solar panel production based on the weather.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "Password Generator", "url": "https://www.steefware.com/passwordgenerator/", "applicationCategory": "SecurityApplication", "operatingSystem": "Web", "description": "Generate strong random passwords locally in your browser. Nothing is sent anywhere.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "WLED P1 Flasher", "url": "https://www.steefware.com/wled-p1-flasher/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "Flash WLED with the HomeWizard P1 usermod straight from your browser and see your home's live energy flow on an LED strip.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 8, "item": { "@type": "SoftwareApplication", "name": "Triangle Calculator", "url": "https://www.steefware.com/trianglecalculator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "description": "Solve any triangle from three known values: sides, angles, area.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 9, "item": { "@type": "SoftwareApplication", "name": "StockSim", "url": "https://www.steefware.com/stocksim/", "applicationCategory": "EducationalApplication", "operatingSystem": "Web", "description": "A minimal stock market simulator for learning how markets behave, with fake money.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 10, "item": { "@type": "SoftwareApplication", "name": "Birdy Flap", "url": "https://www.steefware.com/BirdyFlap/", "applicationCategory": "GameApplication", "operatingSystem": "Web", "description": "A small Flappy Bird style browser game.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } },
+            { "@type": "ListItem", "position": 11, "item": { "@type": "SoftwareApplication", "name": "Hello World", "url": "https://www.steefware.com/helloworld/", "applicationCategory": "EntertainmentApplication", "operatingSystem": "Web", "description": "The first steefware web page, kept for sentimental reasons.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } } }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <style>
-      html, body { height: 100%; }
-      body {
-        /* iOS safe areas */
-        padding: env(safe-area-inset-top) env(safe-area-inset-right)
-                 env(safe-area-inset-bottom) env(safe-area-inset-left);
-        -webkit-tap-highlight-color: transparent;
-      }
+      html, body { height: 100%; margin: 0; }
     </style>
   </head>
 
-  <body class="bg-white text-black antialiased">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+  <body class="sw-page">
+    <div class="sw-container">
       <!-- Header -->
-      <header class="flex items-center justify-between py-6">
-        <a
-          href="/"
-          class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-3 py-2 text-sm font-black tracking-tight shadow-[4px_4px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:translate-x-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-          aria-label="steefware home"
-        >
-          <span class="inline-block h-2 w-2 rounded-full bg-fuchsia-500"></span>
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
           steefware.com
         </a>
 
-        <nav class="flex items-center gap-3 text-sm font-semibold">
-          <a
-            href="#about"
-            class="rounded-lg px-2 py-1 underline underline-offset-4 decoration-2 decoration-black/30 transition-colors duration-150 hover:decoration-black focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-            >about</a
-          >
-          <a
-            href="#tools"
-            class="rounded-lg px-2 py-1 underline underline-offset-4 decoration-2 decoration-black/30 transition-colors duration-150 hover:decoration-black focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-            >apps</a
-          >
+        <nav class="sw-nav" aria-label="Main">
+          <a href="#about" class="sw-focusable">about</a>
+          <a href="#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
         </nav>
       </header>
 
       <!-- Hero -->
-      <main class="pb-14 pt-6">
-        <section id="about" class="relative">
-          <div class="rounded-3xl border-2 border-black p-6 shadow-[8px_8px_0_0_#000] sm:p-10">
-            <h1 class="text-balance text-5xl font-black tracking-tight sm:text-6xl">
-              steefware.com
-            </h1>
+      <main class="sw-main" style="padding-bottom: 3.5rem; padding-top: 1.5rem;">
+        <section id="about" style="position: relative;">
+          <div class="sw-panel">
+            <h1 class="sw-h1">steefware.com</h1>
 
-            <div class="mt-6 space-y-2 text-lg font-semibold sm:text-xl">
-              <p>Simple tools. No cookies, no ads, but terribly indexed on Google so congrats for getting here. (In Safari, press "Share" -> "Add to Home Screen" for the best Appsperience!)</p>
+            <div class="sw-lead" style="margin-top: 1.5rem;">
+              <p style="margin: 0;">
+                Simple, free web tools. No cookies, no ads, and historically
+                terribly indexed on Google — so congrats for getting here.
+                (In Safari, press "Share" → "Add to Home Screen" for the best
+                Appsperience!)
+              </p>
             </div>
 
-            <div
-              class="pointer-events-none absolute -right-2 -top-2 hidden h-10 w-10 rotate-6 rounded-2xl border-2 border-black bg-amber-300 shadow-[4px_4px_0_0_#000] sm:block"
-              aria-hidden="true"
-            ></div>
+            <div class="sw-deco" aria-hidden="true"></div>
           </div>
         </section>
 
-        <!-- Tools -->
-        <section id="tools" class="mt-12">
-          <div class="flex items-end justify-between gap-4">
-            <h2 class="text-sm font-black uppercase tracking-widest">Tools</h2>
-          </div>
+        <!-- Serious tools -->
+        <section id="tools" style="margin-top: 3rem;">
+          <h2 class="sw-kicker">Serious tools</h2>
 
-          <div class="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-            <!-- Card 1 -->
-            <a
-              href="/aflossingstabel"
-              class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
-              aria-label="Open Aflossingstabel"
-            >
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Aflossingstabel</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                  Open →
-                </span>
+          <div class="sw-grid">
+            <a href="/aflossingstabel" class="sw-card sw-focusable" aria-label="Open Aflossingstabel">
+              <div class="sw-card-head">
+                <h3>Aflossingstabel</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                Mortgage / loan repayment table, deterministic and transparent.
-              </p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
+              <p>Mortgage / loan repayment table, deterministic and transparent.</p>
+              <div class="sw-card-bar"></div>
             </a>
 
-            <!-- Card 2 -->
-            <a href="/tanklevel" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Tank Level Calculator">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Tank Level Calculator</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/vvprbis" class="sw-card sw-focusable" aria-label="Open VVPRBIS">
+              <div class="sw-card-head">
+                <h3>VVPRBIS</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">Simple calculator for tank fill levels.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+              <p>Clear, focused tooling for Belgian VVPR-bis dividend planning.</p>
+              <div class="sw-card-bar"></div>
             </a>
 
-            <!-- Card 3 -->
-            <a href="/vvprbis" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open VVPRBIS">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">VVPRBIS</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/tanklevel" class="sw-card sw-focusable" aria-label="Open Tank Level Calculator">
+              <div class="sw-card-head">
+                <h3>Tank Level Calculator</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">Clear, focused tooling for Belgian VVPR-bis dividend planning.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
+              <p>Simple calculator for tank fill levels.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
             </a>
 
-            <!-- Card 4 -->
-            <a href="/stocksim" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open StockSim">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">StockSim</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/solarfit" class="sw-card sw-focusable" aria-label="Open SolarFit">
+              <div class="sw-card-head">
+                <h3>SolarFit</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">A minimal stock market simulator for learning and testing ideas.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+              <p>Tooling to determine optimal solar panel fitment on a roof. Geometry first. Assumptions explicit.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
             </a>
 
-            <!-- Card 5 -->
-            <a href="/passwordgenerator" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Password Generator">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Password Generator</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/solarforecast" class="sw-card sw-focusable" aria-label="Open Solar Forecast">
+              <div class="sw-card-head">
+                <h3>Solar Forecast</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">Self-explanatory.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+              <p>Look how Sun Today! Expected solar production based on the weather.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
             </a>
 
-            <!-- Card 6 -->
-            <a href="/helloworld" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Hello World">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Hello World</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/passwordgenerator" class="sw-card sw-focusable" aria-label="Open Password Generator">
+              <div class="sw-card-head">
+                <h3>Password Generator</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">This is my first web page.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-fuchsia-500"></div>
+              <p>Self-explanatory. Runs entirely in your browser.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
             </a>
 
-            <!-- Card 7 -->
-            <a href="/solarfit" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open SolarFit">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">SolarFit</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/wled-p1-flasher" class="sw-card sw-focusable" aria-label="Open WLED P1 Flasher">
+              <div class="sw-card-head">
+                <h3>WLED P1 Flasher</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">
-                Tooling to determine optimal solar panel fitment on a roof. Geometry first. Assumptions explicit.
-              </p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+              <p>Flash WLED with the HomeWizard P1 usermod straight from your browser. Your energy use, as a light.</p>
+              <div class="sw-card-bar"></div>
             </a>
 
-            <!-- Card 8 -->
-            <a href="/BirdyFlap" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open BirdyFlap">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Birdy Flap</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
+            <a href="/trianglecalculator" class="sw-card sw-focusable" aria-label="Open Triangle Calculator">
+              <div class="sw-card-head">
+                <h3>Triangle Calculator</h3>
+                <span class="sw-badge">Open →</span>
               </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">Sorry for this one.</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
-            </a>
-
-             <!-- Card 9 -->
-            <a href="/trianglecalculator" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Triangle Calculator">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Triangle Calculator</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
-              </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">I many smart now!</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
-            </a>
-
-             <!-- Card 10 -->
-            <a href="/solarforecast" class="group block rounded-2xl border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000] transition-transform duration-150 ease-out hover:-translate-y-1 hover:translate-x-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white" aria-label="Open Solar Forecast">
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="text-xl font-black tracking-tight">Solar Forecast</h3>
-                <span class="inline-flex items-center rounded-full border-2 border-black px-3 py-1 text-xs font-black shadow-[3px_3px_0_0_#000] transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5">Open →</span>
-              </div>
-              <p class="mt-3 text-sm font-semibold leading-relaxed">Look how Sun Today!</p>
-              <div class="mt-4 h-2 w-16 rounded-full bg-amber-300"></div>
+              <p>I many smart now! Solves any triangle from three known values.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
             </a>
           </div>
         </section>
+
+        <!-- Fun & experiments -->
+        <section id="fun" style="margin-top: 3rem;">
+          <h2 class="sw-kicker">Fun &amp; experiments</h2>
+
+          <div class="sw-grid">
+            <a href="/stocksim" class="sw-card sw-focusable" aria-label="Open StockSim">
+              <div class="sw-card-head">
+                <h3>StockSim</h3>
+                <span class="sw-badge">Open →</span>
+              </div>
+              <p>A minimal stock market simulator for learning and testing ideas.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/BirdyFlap" class="sw-card sw-focusable" aria-label="Open Birdy Flap">
+              <div class="sw-card-head">
+                <h3>Birdy Flap</h3>
+                <span class="sw-badge">Open →</span>
+              </div>
+              <p>Sorry for this one.</p>
+              <div class="sw-card-bar sw-card-bar--amber"></div>
+            </a>
+
+            <a href="/helloworld" class="sw-card sw-focusable" aria-label="Open Hello World">
+              <div class="sw-card-head">
+                <h3>Hello World</h3>
+                <span class="sw-badge">Open →</span>
+              </div>
+              <p>This is my first web page.</p>
+              <div class="sw-card-bar"></div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">blog</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+            <a href="/blog/feed.xml">RSS</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
       </main>
     </div>
 
