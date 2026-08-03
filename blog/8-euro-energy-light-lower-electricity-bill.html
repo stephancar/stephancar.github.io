@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>The €8 light that trims your electricity bill (by making you look at it) | steefware blog</title>
+    <meta
+      name="description"
+      content="An €8 LED strip plus your smart meter's P1 port becomes an ambient energy display: green when your solar panels export, red when you're buying. Why seeing your power flow actually changes what you pay."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/8-euro-energy-light-lower-electricity-bill.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="The €8 light that trims your electricity bill" />
+    <meta property="og:description" content="An LED strip + your smart meter's P1 port = an ambient energy display. Why seeing your power flow changes what you pay." />
+    <meta property="og:url" content="https://www.steefware.com/blog/8-euro-energy-light-lower-electricity-bill.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-08-03" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The €8 light that trims your electricity bill (by making you look at it)",
+      "description": "An €8 LED strip plus your smart meter's P1 port becomes an ambient energy display. Why seeing your power flow actually changes what you pay.",
+      "inLanguage": "en",
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/8-euro-energy-light-lower-electricity-bill.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            The €8 light that trims your electricity bill (by making you look at it)
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>3 August 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±6 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              Here's an uncomfortable fact about home energy: your meter knows
+              everything, and you look at it roughly never. The data is
+              perfect — every watt you draw, every watt your solar panels
+              push back — and it lives in a grey box you visit twice a year,
+              usually because a fuse tripped.
+            </p>
+            <p>
+              The cheapest energy-saving device I know of is not a battery,
+              not a smart thermostat, not a new appliance. It's a
+              <strong>WS2812B LED strip</strong> — about €8 — glued somewhere
+              you can't avoid seeing it, showing your live power flow as
+              colour. Green: your panels are exporting, electricity is
+              effectively free right now. Red: you're buying. The redder, the
+              faster the money leaves.
+            </p>
+
+            <h2>Why an ambient display works when an app doesn't</h2>
+            <p>
+              You've probably got an app from your inverter or utility.
+              Apps have a fatal flaw: you have to open them. Nobody opens an
+              energy app before switching on the dishwasher — checking is a
+              chore, so it doesn't happen, so the information might as well
+              not exist.
+            </p>
+            <p>
+              An ambient display flips that. The light is simply <em>there</em>,
+              in the corner of your eye, all day. You stop reading numbers and
+              start absorbing a state: "we're green right now." And once the
+              whole household absorbs it, behaviour follows without anyone
+              making a spreadsheet about it:
+            </p>
+            <ul>
+              <li>The dishwasher starts when the strip is green, not at 21:00.</li>
+              <li>The tumble dryer waits for a sunny afternoon.</li>
+              <li>The EV charges when the light says the sun is paying for it.</li>
+              <li>Someone finally asks why the strip glows red at 2 a.m. (Hello, forgotten patio heater.)</li>
+            </ul>
+
+            <h2>Does it actually save money?</h2>
+            <p>
+              Honest answer: it saves what your behaviour saves — the strip
+              itself consumes a watt or two and produces zero kilowatt-hours.
+              But the research on in-home energy displays has been fairly
+              consistent for years: making consumption visible typically
+              shaves <strong>a few percent</strong> off household usage, with
+              bigger effects when the feedback is real-time and always
+              visible — which is exactly what an ambient light is.
+            </p>
+            <p>
+              Do your own maths: a few percent of a €1,200–1,800 annual bill
+              is €40–90, every year, for an €8 strip and an evening of
+              tinkering. And if you have solar panels, the load-shifting
+              effect is where the real money is — more on that below.
+            </p>
+
+            <h2>What you need</h2>
+            <ul>
+              <li>A digital meter with a <strong>P1 port</strong> (standard in Belgium and the Netherlands).</li>
+              <li>A <strong>HomeWizard P1 dongle</strong> plugged into it — it puts your live readings on your WiFi.</li>
+              <li>An <strong>ESP32</strong> (a few euros) running <strong>WLED</strong> with the HomeWizard P1 usermod.</li>
+              <li>The €8 LED strip.</li>
+            </ul>
+            <p>
+              The usermod polls the dongle and paints the net flow onto the
+              strip. No cloud, no subscription, no account: the data does one
+              hop across your living room and becomes light. Flashing the
+              firmware happens straight from your browser with the
+              <a href="/wled-p1-flasher/">WLED P1 Flasher</a> — the build
+              story is in <a href="/blog/wled-p1-energy-light.html">this
+              earlier post</a>.
+            </p>
+
+            <h2>The solar multiplier</h2>
+            <p>
+              If you have panels, visibility pays double. In Belgium and most
+              of Europe, the electricity you inject earns you a fraction —
+              often a quarter or less — of what the electricity you buy costs
+              you. Every kilowatt-hour you manage to consume <em>while the
+              sun produces it</em>, instead of exporting it at noon and
+              buying it back at 19:00, is worth the full difference. That's
+              the whole game of <strong>self-consumption</strong>, and it
+              starts with knowing when you're green.
+            </p>
+            <p>
+              The light tells you <em>now</em>. For planning the rest of the
+              day — will 14:00 be better than 16:00 for the laundry? — you
+              want a <a href="/solarforecast/">solar production forecast</a>.
+              And for the economics of offtake versus injection, read
+              <a href="/blog/offtake-injection-selfconsumption.html">why
+              selling your solar power back is a bad deal</a>.
+            </p>
+
+            <blockquote>
+              No affiliations, nothing to buy from me: the flasher tool, the
+              usermod and this blog are free. The €8 goes to whoever sells
+              you the LED strip.
+            </blockquote>
+          </div>
+
+          <a href="/wled-p1-flasher/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>WLED P1 Flasher</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Flash the energy-light firmware straight from your browser.</p>
+            <div class="sw-card-bar"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Current solar output: how to see what your panels do right now | steefware blog</title>
+    <meta
+      name="description"
+      content="Inverter apps lag minutes behind and only tell half the story. How to read your current solar output and net power flow in real time — from the P1 port of your smart meter to a glanceable light."
+    />
+    <link rel="canonical" href="https://www.steefware.com/blog/current-solar-output-live.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="steefware" />
+    <meta property="og:title" content="Current solar output: how to see what your panels do right now" />
+    <meta property="og:description" content="Inverter apps lag and only tell half the story. Reading your live solar output and net flow, from P1 port to glanceable light." />
+    <meta property="og:url" content="https://www.steefware.com/blog/current-solar-output-live.html" />
+    <meta property="og:image" content="https://www.steefware.com/assets/og-image.png" />
+    <meta property="article:published_time" content="2026-08-03" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="steefware blog" href="/blog/feed.xml" />
+    <link rel="stylesheet" href="/assets/steefware.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Current solar output: how to see what your panels do right now",
+      "description": "Reading your live solar output and net power flow, from the P1 port of your smart meter to a glanceable light.",
+      "inLanguage": "en",
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "author": { "@type": "Person", "name": "Stephan", "url": "https://www.steefware.com/" },
+      "mainEntityOfPage": "https://www.steefware.com/blog/current-solar-output-live.html",
+      "image": "https://www.steefware.com/assets/og-image.png"
+    }
+    </script>
+    <style>html, body { height: 100%; margin: 0; }</style>
+  </head>
+
+  <body class="sw-page">
+    <div class="sw-container">
+      <header class="sw-header">
+        <a href="/" class="sw-logo sw-focusable" aria-label="steefware home">
+          <span class="sw-logo-dot"></span>
+          steefware.com
+        </a>
+        <nav class="sw-nav" aria-label="Main">
+          <a href="/" class="sw-focusable">home</a>
+          <a href="/#tools" class="sw-focusable">apps</a>
+          <a href="/blog/" class="sw-focusable">blog</a>
+        </nav>
+      </header>
+
+      <main style="padding-bottom: 3.5rem; padding-top: 1rem;">
+        <article>
+          <p class="sw-kicker">Serious tools · <span class="sw-badge">EN</span></p>
+          <h1 class="sw-h1" style="font-size: 2.25rem; margin-top: 0.75rem;">
+            Current solar output: how to see what your panels do right now
+          </h1>
+          <div class="sw-meta" style="margin-top: 1rem;">
+            <span>3 August 2026</span><span>·</span><span>Stephan</span><span>·</span><span>±5 min read</span>
+          </div>
+
+          <div class="sw-prose" style="margin-top: 1.5rem;">
+            <p>
+              "What are the panels doing right now?" sounds like the easiest
+              question in home solar. It isn't, because the obvious answer —
+              the inverter app — has two problems: it usually trails reality
+              by minutes (cloud passes, app still celebrates), and it only
+              shows <strong>production</strong>. For every practical decision
+              you actually need the <strong>net flow</strong>: production
+              minus whatever the house is eating at that moment.
+            </p>
+
+            <h2>Production vs net flow</h2>
+            <p>
+              Your panels making 2.4 kW means nothing on its own. If the
+              oven and the dryer are pulling 3.1 kW, you are — despite the
+              sunshine — <em>buying</em> 0.7 kW. The number that decides
+              whether now is a good moment to start another appliance is the
+              one your <strong>digital meter</strong> computes continuously:
+              net offtake or net injection, updated every second, on the
+              <strong>P1 port</strong>.
+            </p>
+            <p>
+              That port is the most underrated feature of the whole smart
+              meter rollout. A €30 dongle (HomeWizard's is the one I use)
+              puts the live reading on your WiFi, and from there it's yours —
+              no cloud required, no subscription, one-second resolution.
+            </p>
+
+            <h2>From number to glance</h2>
+            <p>
+              You can watch the dongle's app, but live numbers you must
+              fetch are live numbers you'll stop fetching (the same reason
+              inverter apps go unopened). The trick is turning the net flow
+              into something ambient. My version:
+              <a href="/blog/8-euro-energy-light-lower-electricity-bill.html">an
+              €8 LED strip running WLED</a> with a usermod that polls the P1
+              dongle — green and filling up when injecting, red when buying.
+              The strip is the answer to "can I start the dryer?" from
+              across the room, latency about a second, cost about a lunch.
+            </p>
+            <p>
+              If you'd rather solder nothing: the
+              <a href="/wled-p1-flasher/">WLED P1 Flasher</a> writes the
+              firmware to an ESP32 straight from your browser. Plug in
+              strip, enter WiFi, done.
+            </p>
+
+            <h2>"Now" is half the picture</h2>
+            <p>
+              Live output answers <em>whether</em> this moment is green. It
+              can't answer whether 15:00 will be greener — for that you want
+              the production curve of the rest of the day, which is exactly
+              what a <a href="/solarforecast/">solar forecast</a> gives you
+              (<a href="/blog/solar-power-forecast-plan-your-day.html">how to
+              plan your day around it</a>). And why all this glancing and
+              planning is worth actual money — the gap between what
+              injection pays and offtake costs — is spelled out in
+              <a href="/blog/offtake-injection-selfconsumption.html">offtake
+              vs injection</a>.
+            </p>
+            <p>
+              Forecast at breakfast, light before every start button. Your
+              meter already knows everything; the whole project is just
+              making it show you.
+            </p>
+
+            <blockquote>
+              P1 ports are standard on Belgian and Dutch digital meters
+              (DSMR); elsewhere, check what your meter exposes. No
+              affiliations — the tools here are free and the hardware is
+              whatever your electronics shop sells.
+            </blockquote>
+          </div>
+
+          <a href="/wled-p1-flasher/" class="sw-card sw-focusable" style="margin-top: 2rem; max-width: 42rem;">
+            <div class="sw-card-head">
+              <h3>WLED P1 Flasher</h3>
+              <span class="sw-badge">Open the tool →</span>
+            </div>
+            <p>Your live net power flow, as a light on the wall.</p>
+            <div class="sw-card-bar"></div>
+          </a>
+        </article>
+
+        <footer class="sw-footer">
+          <div class="sw-footer-links">
+            <a href="/blog/">← all articles</a>
+            <a href="https://github.com/stephancar">GitHub</a>
+          </div>
+          <a href="https://ko-fi.com/steefware" class="sw-btn sw-btn--amber" rel="noopener">☕ Buy me a coffee</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
