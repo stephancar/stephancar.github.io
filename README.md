@@ -6,11 +6,13 @@ The hub page and blog of [steefware.com](https://www.steefware.com/) — a colle
 
 - `index.html` — the tool overview (serious tools / fun & experiments)
 - `blog/` — plain-HTML articles explaining the ideas and math behind each tool, plus `feed.xml` (RSS)
+- `qrcode/` — the QR code generator tool (no build step, no dependencies: `qr.js` is a
+  self-contained ISO/IEC 18004 encoder, `app.js` is the UI)
 - `assets/steefware.css` — the shared neubrutalist design system used by the hub, the blog and the individual apps (they link it same-origin)
 - `robots.txt`, `sitemap.xml`, `llms.txt` — crawler files for search engines and LLMs
 - `sw.js`, `manifest.webmanifest` — PWA bits (network-first service worker)
 
-Each tool lives in its own repo under [github.com/stephancar](https://github.com/stephancar?tab=repositories) and is served at `steefware.com/<repo>/` via GitHub Pages.
+Most tools live in their own repo under [github.com/stephancar](https://github.com/stephancar?tab=repositories) and are served at `steefware.com/<repo>/` via GitHub Pages. `qrcode/` is the exception: it is small enough to live in this repo and is served from `steefware.com/qrcode/`.
 
 ## Local development
 
